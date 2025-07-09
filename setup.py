@@ -11,8 +11,8 @@ from pathlib import Path
 
 def check_python_version():
     """Check if Python version is compatible"""
-    if sys.version_info < (3, 11):
-        print("❌ Python 3.11 or higher is required")
+    if sys.version_info < (3, 13):
+        print("❌ Python 3.13 or higher is required")
         print(f"   Current version: {sys.version}")
         return False
     else:

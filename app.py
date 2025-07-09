@@ -6,7 +6,7 @@ Streamlit application for AI-powered workers' compensation assistance
 
 import streamlit as st
 import json
-from typing import List, Dict, Any
+from typing import Any
 import time
 
 # Import our modules
@@ -89,7 +89,7 @@ def initialize_services():
         st.error(f"Configuration error: {str(e)}")
         return None
 
-def format_sources(chunks: List[Dict[str, Any]]) -> str:
+def format_sources(chunks: list[dict[str, Any]]) -> str:
     """Format source citations for display"""
     sources = []
     for i, chunk in enumerate(chunks, 1):
