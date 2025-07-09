@@ -123,26 +123,7 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.header("📚 Knowledge Base")
-        
-        # Show uploaded documents
-        try:
-            documents = services['supabase'].get_all_documents()
-            if documents:
-                st.subheader("Uploaded Documents")
-                for doc in documents:
-                    chunk_count = services['supabase'].get_chunk_count(doc['id'])
-                    st.write(f"📄 {doc['title']}")
-                    st.caption(f"Chunks: {chunk_count} | Size: {doc['file_size']:,} bytes")
-            else:
-                st.info("No documents uploaded yet.")
-        except Exception as e:
-            st.error(f"Error loading documents: {str(e)}")
-        
-        st.divider()
-        
-        # Configuration
-        st.subheader("⚙️ Configuration")
+        st.header("⚙️ Configuration")
         st.write(f"Model: {Config.LLM_MODEL}")
         st.write(f"Temperature: {Config.TEMPERATURE}")
         st.write(f"Max Results: {Config.TOP_K_RESULTS}")
@@ -184,7 +165,7 @@ def main():
                     similar_chunks = services['supabase'].search_similar_chunks(question_embedding)
                 
                 if not similar_chunks:
-                    response = "I don't have enough information in my knowledge base to answer your question accurately. Please ensure relevant workers' compensation documents have been uploaded."
+                    response = "I don't have enough information in my knowledge base to answer your question accurately."
                     sources = "No relevant sources found."
                 else:
                     with st.spinner("🤖 Generating response..."):

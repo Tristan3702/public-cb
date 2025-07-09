@@ -1,13 +1,6 @@
 streamlit==1.28.1
 supabase==2.0.2
 openai==1.3.7
-langchain==0.1.13          # Compatible with langsmith>=0.1.0
-langsmith==0.1.5            # Ensures compatibility with langchain-core
-langchain-core==0.1.42      # Avoids older pre-0.1.32 boundaries
-langchain-text-splitters==0.0.4
-langchain-community==0.0.10
 tiktoken==0.5.2
 python-dotenv==1.0.0
-pypdf2==3.0.1
-markdown==3.5.1
 numpy==1.24.3

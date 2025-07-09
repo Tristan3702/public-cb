@@ -22,8 +22,7 @@ def check_python_version():
 def check_dependencies():
     """Check if required packages are installed"""
     required_packages = [
-        'streamlit', 'supabase', 'openai', 'langchain', 
-        'python-dotenv', 'pypdf2', 'markdown', 'requests'
+        'streamlit', 'supabase', 'openai', 'python-dotenv', 'requests'
     ]
     
     missing_packages = []
@@ -143,9 +142,7 @@ def main():
     print("      - Create a new Supabase project")
     print("      - Enable pgvector extension")
     print("      - Run database/schema.sql")
-    print("   2. Upload documents:")
-    print("      python document_uploader.py sample_documents/workers_compensation_guide.md")
-    print("   3. Start the chatbot:")
+    print("   2. Start the chatbot:")
     print("      streamlit run app.py")
     print("\n📚 For more information, see README.md")
 
